@@ -9077,16 +9077,793 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Dataset Overview to analyse the data types, shape of the dataset and unique value count for each variable. </span>
+<span class="k">def</span> <span class="nf">dataset_overview</span><span class="p">(</span><span class="n">dataframe</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Generates a summary of the dataset, including:</span>
+<span class="sd">    - Total number of rows and columns / Shape of the dataset</span>
+<span class="sd">    - Unique values per column</span>
+<span class="sd">    - Data types for each column</span>
+<span class="sd">    """</span>
+    <span class="c1"># Shape of the dataset</span>
+    <span class="n">rows_columns</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">shape</span>
+    <span class="c1"># Unique value count for each variable</span>
+    <span class="n">unique_counts</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+    <span class="c1"># Datatypes</span>
+    <span class="n">data_types</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">dtypes</span>
+    
+    <span class="c1"># DataFrame for the results</span>
+    <span class="n">overview</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s2">"Unique Values"</span><span class="p">:</span> <span class="n">unique_counts</span><span class="p">,</span>
+        <span class="s2">"Data Type"</span><span class="p">:</span> <span class="n">data_types</span>
+    <span class="p">})</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Shape: </span><span class="si">{</span><span class="n">rows_columns</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">overview</span>
+
+<span class="n">overview</span> <span class="o">=</span> <span class="n">dataset_overview</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">overview</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Shape: (1930, 25)
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Unique Values</th>
+<th>Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>Time</th>
+<td>10</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Country Name</th>
+<td>193</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Female Population</th>
+<td>1927</td>
+<td>float64</td>
+</tr>
+<tr>
+<th>Male Population</th>
+<td>1929</td>
+<td>float64</td>
+</tr>
+<tr>
+<th>Total Population</th>
+<td>1930</td>
+<td>float64</td>
+</tr>
+<tr>
+<th>GDP (Current US$)</th>
+<td>1903</td>
+<td>object</td>
+</tr>
+<tr>
+<th>GDP per Capita (2010 US$)</th>
+<td>1887</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Inflation (Annual %)</th>
+<td>1774</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Human Capital Index</th>
+<td>398</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Human Capital Index (Male)</th>
+<td>347</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Human Capital Index (Female)</th>
+<td>348</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Suicide Rate (Total)</th>
+<td>314</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Suicide Rate (Female)</th>
+<td>165</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Suicide Rate (Male)</th>
+<td>435</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Literacy Rate (Female)</th>
+<td>374</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Literacy Rate (Male)</th>
+<td>373</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Literacy Rate (Total)</th>
+<td>374</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Primary School Enrollment</th>
+<td>1607</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Unemployment Rate</th>
+<td>1409</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Economic Rights Score</th>
+<td>1636</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Legal Rights Index</th>
+<td>14</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Voice and Accountability</th>
+<td>1921</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Clean Fuel Access</th>
+<td>641</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Government Effectiveness</th>
+<td>1905</td>
+<td>object</td>
+</tr>
+<tr>
+<th>Political Stability</th>
+<td>1881</td>
+<td>object</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">columns_to_convert</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"GDP (Current US$)"</span><span class="p">,</span> <span class="s2">"GDP per Capita (2010 US$)"</span><span class="p">,</span> <span class="s2">"Inflation (Annual %)"</span><span class="p">,</span>
+    <span class="s2">"Human Capital Index"</span><span class="p">,</span> <span class="s2">"Human Capital Index (Male)"</span><span class="p">,</span> <span class="s2">"Human Capital Index (Female)"</span><span class="p">,</span>
+    <span class="s2">"Suicide Rate (Total)"</span><span class="p">,</span> <span class="s2">"Suicide Rate (Female)"</span><span class="p">,</span> <span class="s2">"Suicide Rate (Male)"</span><span class="p">,</span>
+    <span class="s2">"Literacy Rate (Female)"</span><span class="p">,</span> <span class="s2">"Literacy Rate (Male)"</span><span class="p">,</span> <span class="s2">"Literacy Rate (Total)"</span><span class="p">,</span>
+    <span class="s2">"Economic Rights Score"</span><span class="p">,</span> <span class="s2">"Unemployment Rate"</span><span class="p">,</span> <span class="s2">"Primary School Enrollment"</span><span class="p">,</span>
+    <span class="s2">"Clean Fuel Access"</span><span class="p">,</span> <span class="s2">"Government Effectiveness"</span><span class="p">,</span> <span class="s2">"Political Stability"</span><span class="p">,</span> <span class="s2">"Legal Rights Index"</span>
+<span class="p">]</span>
+
+<span class="c1"># Converting the numerical columns</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns_to_convert</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">'coerce'</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Missing value analysis</span>
+<span class="k">def</span> <span class="nf">missing_value_summary</span><span class="p">(</span><span class="n">dataframe</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Generates a summary of missing values for the DataFrame.</span>
+<span class="sd">    Returns a DataFrame showing the total missing values and percentage of missing values for each column.</span>
+<span class="sd">    """</span>
+    <span class="c1"># Total missing value count</span>
+    <span class="n">missing_counts</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="c1"># The ratio of missing values ​​to the total data set</span>
+    <span class="n">missing_percent</span> <span class="o">=</span> <span class="p">(</span><span class="n">missing_counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataframe</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="c1"># DataFrame for the results</span>
+    <span class="n">missing_summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s2">"Missing Values"</span><span class="p">:</span> <span class="n">missing_counts</span><span class="p">,</span>
+        <span class="s2">"Percentage (%)"</span><span class="p">:</span> <span class="n">missing_percent</span>
+    <span class="p">})</span>
+    <span class="c1"># Exclude columns with no missing values ​​and sort by missing values</span>
+    <span class="n">missing_summary</span> <span class="o">=</span> <span class="n">missing_summary</span><span class="p">[</span><span class="n">missing_summary</span><span class="p">[</span><span class="s2">"Missing Values"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">"Missing Values"</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">missing_summary</span>
+
+<span class="n">missing_summary</span> <span class="o">=</span> <span class="n">missing_value_summary</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Table for missing values</span>
+<span class="n">missing_summary</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Missing Values</th>
+<th>Percentage (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>Human Capital Index (Male)</th>
+<td>1568</td>
+<td>81.243523</td>
+</tr>
+<tr>
+<th>Human Capital Index (Female)</th>
+<td>1567</td>
+<td>81.191710</td>
+</tr>
+<tr>
+<th>Literacy Rate (Female)</th>
+<td>1556</td>
+<td>80.621762</td>
+</tr>
+<tr>
+<th>Literacy Rate (Male)</th>
+<td>1556</td>
+<td>80.621762</td>
+</tr>
+<tr>
+<th>Literacy Rate (Total)</th>
+<td>1556</td>
+<td>80.621762</td>
+</tr>
+<tr>
+<th>Human Capital Index</th>
+<td>1513</td>
+<td>78.393782</td>
+</tr>
+<tr>
+<th>Legal Rights Index</th>
+<td>635</td>
+<td>32.901554</td>
+</tr>
+<tr>
+<th>Primary School Enrollment</th>
+<td>324</td>
+<td>16.787565</td>
+</tr>
+<tr>
+<th>Economic Rights Score</th>
+<td>295</td>
+<td>15.284974</td>
+</tr>
+<tr>
+<th>Inflation (Annual %)</th>
+<td>157</td>
+<td>8.134715</td>
+</tr>
+<tr>
+<th>Unemployment Rate</th>
+<td>150</td>
+<td>7.772021</td>
+</tr>
+<tr>
+<th>Suicide Rate (Total)</th>
+<td>100</td>
+<td>5.181347</td>
+</tr>
+<tr>
+<th>Suicide Rate (Female)</th>
+<td>100</td>
+<td>5.181347</td>
+</tr>
+<tr>
+<th>Suicide Rate (Male)</th>
+<td>100</td>
+<td>5.181347</td>
+</tr>
+<tr>
+<th>GDP per Capita (2010 US$)</th>
+<td>44</td>
+<td>2.279793</td>
+</tr>
+<tr>
+<th>Clean Fuel Access</th>
+<td>40</td>
+<td>2.072539</td>
+</tr>
+<tr>
+<th>GDP (Current US$)</th>
+<td>28</td>
+<td>1.450777</td>
+</tr>
+<tr>
+<th>Government Effectiveness</th>
+<td>11</td>
+<td>0.569948</td>
+</tr>
+<tr>
+<th>Political Stability</th>
+<td>1</td>
+<td>0.051813</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Filling missing values with the average value for each country, if they have any non-missing value for the variable.</span>
+<span class="k">def</span> <span class="nf">fill_missing_values_by_country_mean</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">country_column</span><span class="p">,</span> <span class="n">year_column</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Fill missing values for a given column using the country-specific mean of the available data.</span>
+<span class="sd">    If no data is available for a country, the function skips filling.</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">dataframe</span><span class="p">[</span><span class="n">country_column</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+        <span class="c1"># Filter data for the specific country</span>
+        <span class="n">country_data</span> <span class="o">=</span> <span class="n">dataframe</span><span class="p">[</span><span class="n">dataframe</span><span class="p">[</span><span class="n">country_column</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">]</span>
+        <span class="c1"># Check if the column has at least one non-missing value for the country</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">country_data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+            <span class="n">mean_value</span> <span class="o">=</span> <span class="n">country_data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+            <span class="c1"># Fill missing values for that country with the mean value</span>
+            <span class="n">dataframe</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                <span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="n">country_column</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dataframe</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()),</span>
+                <span class="n">column</span>
+            <span class="p">]</span> <span class="o">=</span> <span class="n">mean_value</span>
+        <span class="c1">#else </span>
+            <span class="c1"># We can use this part to fill the missing values for the countries that has no non-missing value for the variables.</span>
+
+<span class="c1"># Define which columns to fill</span>
+<span class="n">columns_to_fill</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"GDP (Current US$)"</span><span class="p">,</span> <span class="s2">"GDP per Capita (2010 US$)"</span><span class="p">,</span> <span class="s2">"Inflation (Annual %)"</span><span class="p">,</span>
+    <span class="s2">"Human Capital Index"</span><span class="p">,</span> <span class="s2">"Human Capital Index (Male)"</span><span class="p">,</span> <span class="s2">"Human Capital Index (Female)"</span><span class="p">,</span>
+    <span class="s2">"Suicide Rate (Total)"</span><span class="p">,</span> <span class="s2">"Suicide Rate (Female)"</span><span class="p">,</span> <span class="s2">"Suicide Rate (Male)"</span><span class="p">,</span>
+    <span class="s2">"Literacy Rate (Female)"</span><span class="p">,</span> <span class="s2">"Literacy Rate (Male)"</span><span class="p">,</span> <span class="s2">"Literacy Rate (Total)"</span><span class="p">,</span>
+    <span class="s2">"Economic Rights Score"</span><span class="p">,</span> <span class="s2">"Unemployment Rate"</span><span class="p">,</span> <span class="s2">"Primary School Enrollment"</span><span class="p">,</span>
+    <span class="s2">"Clean Fuel Access"</span><span class="p">,</span> <span class="s2">"Government Effectiveness"</span><span class="p">,</span> <span class="s2">"Political Stability"</span><span class="p">,</span> <span class="s2">"Legal Rights Index"</span>
+<span class="p">]</span>
+
+<span class="c1"># Fill missing values</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns_to_fill</span><span class="p">:</span>
+    <span class="n">fill_missing_values_by_country_mean</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">country_column</span><span class="o">=</span><span class="s2">"Country Name"</span><span class="p">,</span> <span class="n">year_column</span><span class="o">=</span><span class="s2">"Time"</span><span class="p">)</span>
+
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Time</th>
+<th>Country Name</th>
+<th>Female Population</th>
+<th>Male Population</th>
+<th>Total Population</th>
+<th>GDP (Current US$)</th>
+<th>GDP per Capita (2010 US$)</th>
+<th>Inflation (Annual %)</th>
+<th>Human Capital Index</th>
+<th>Human Capital Index (Male)</th>
+<th>Human Capital Index (Female)</th>
+<th>Suicide Rate (Total)</th>
+<th>Suicide Rate (Female)</th>
+<th>Suicide Rate (Male)</th>
+<th>Literacy Rate (Female)</th>
+<th>Literacy Rate (Male)</th>
+<th>Literacy Rate (Total)</th>
+<th>Primary School Enrollment</th>
+<th>Unemployment Rate</th>
+<th>Economic Rights Score</th>
+<th>Legal Rights Index</th>
+<th>Voice and Accountability</th>
+<th>Clean Fuel Access</th>
+<th>Government Effectiveness</th>
+<th>Political Stability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>2014</td>
+<td>Afghanistan</td>
+<td>16172321.0</td>
+<td>16543889.0</td>
+<td>32716210.0</td>
+<td>2.049713e+10</td>
+<td>576.487817</td>
+<td>4.673996</td>
+<td>0.391245</td>
+<td>0.400011</td>
+<td>0.363431</td>
+<td>3.9</td>
+<td>3.6</td>
+<td>4.2</td>
+<td>17.017839</td>
+<td>45.417099</td>
+<td>31.448851</td>
+<td>109.115517</td>
+<td>7.910</td>
+<td>1.943449</td>
+<td>9.0</td>
+<td>-1.13544</td>
+<td>25.7</td>
+<td>-1.359305</td>
+<td>-2.411068</td>
+</tr>
+<tr>
+<th>1</th>
+<td>2014</td>
+<td>Albania</td>
+<td>1439863.0</td>
+<td>1449241.0</td>
+<td>2889104.0</td>
+<td>1.322815e+10</td>
+<td>3855.760744</td>
+<td>1.625865</td>
+<td>0.597756</td>
+<td>0.576212</td>
+<td>0.621578</td>
+<td>5.0</td>
+<td>3.2</td>
+<td>6.6</td>
+<td>95.913776</td>
+<td>98.180386</td>
+<td>97.046135</td>
+<td>114.043320</td>
+<td>18.050</td>
+<td>2.340072</td>
+<td>6.0</td>
+<td>0.143777</td>
+<td>74.4</td>
+<td>-0.048918</td>
+<td>0.485986</td>
+</tr>
+<tr>
+<th>2</th>
+<td>2014</td>
+<td>Algeria</td>
+<td>19004433.0</td>
+<td>19755734.0</td>
+<td>38760168.0</td>
+<td>2.389427e+11</td>
+<td>4687.288575</td>
+<td>2.916927</td>
+<td>0.528759</td>
+<td>0.512211</td>
+<td>0.546662</td>
+<td>2.8</td>
+<td>2.0</td>
+<td>3.5</td>
+<td>75.322968</td>
+<td>87.422958</td>
+<td>81.407837</td>
+<td>111.686699</td>
+<td>10.210</td>
+<td>2.312768</td>
+<td>2.0</td>
+<td>-0.813358</td>
+<td>99.5</td>
+<td>-0.339202</td>
+<td>-1.190535</td>
+</tr>
+<tr>
+<th>3</th>
+<td>2014</td>
+<td>Andorra</td>
+<td>35473.0</td>
+<td>36148.0</td>
+<td>71621.0</td>
+<td>3.271686e+09</td>
+<td>38402.649261</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>88.235291</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.165965</td>
+<td>100.0</td>
+<td>1.712283</td>
+<td>1.286593</td>
+</tr>
+<tr>
+<th>4</th>
+<td>2014</td>
+<td>Angola</td>
+<td>13746371.0</td>
+<td>13381965.0</td>
+<td>27128337.0</td>
+<td>1.359668e+11</td>
+<td>3304.681148</td>
+<td>7.280387</td>
+<td>0.360595</td>
+<td>0.365902</td>
+<td>0.355888</td>
+<td>6.4</td>
+<td>2.4</td>
+<td>10.4</td>
+<td>53.407211</td>
+<td>79.974152</td>
+<td>66.030113</td>
+<td>112.516214</td>
+<td>16.317</td>
+<td>1.565973</td>
+<td>1.0</td>
+<td>-1.14523</td>
+<td>46.7</td>
+<td>-1.055904</td>
+<td>-0.333232</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Let's see the variables that still has missing data.</span>
+<span class="n">missing_summary</span> <span class="o">=</span> <span class="n">missing_value_summary</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Table for missing values</span>
+<span class="n">missing_summary</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Missing Values</th>
+<th>Percentage (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>Literacy Rate (Female)</th>
+<td>550</td>
+<td>28.497409</td>
+</tr>
+<tr>
+<th>Literacy Rate (Male)</th>
+<td>550</td>
+<td>28.497409</td>
+</tr>
+<tr>
+<th>Literacy Rate (Total)</th>
+<td>550</td>
+<td>28.497409</td>
+</tr>
+<tr>
+<th>Human Capital Index (Male)</th>
+<td>400</td>
+<td>20.725389</td>
+</tr>
+<tr>
+<th>Human Capital Index (Female)</th>
+<td>400</td>
+<td>20.725389</td>
+</tr>
+<tr>
+<th>Human Capital Index</th>
+<td>300</td>
+<td>15.544041</td>
+</tr>
+<tr>
+<th>Unemployment Rate</th>
+<td>150</td>
+<td>7.772021</td>
+</tr>
+<tr>
+<th>Economic Rights Score</th>
+<td>110</td>
+<td>5.699482</td>
+</tr>
+<tr>
+<th>Suicide Rate (Male)</th>
+<td>100</td>
+<td>5.181347</td>
+</tr>
+<tr>
+<th>Inflation (Annual %)</th>
+<td>100</td>
+<td>5.181347</td>
+</tr>
+<tr>
+<th>Suicide Rate (Total)</th>
+<td>100</td>
+<td>5.181347</td>
+</tr>
+<tr>
+<th>Suicide Rate (Female)</th>
+<td>100</td>
+<td>5.181347</td>
+</tr>
+<tr>
+<th>Legal Rights Index</th>
+<td>70</td>
+<td>3.626943</td>
+</tr>
+<tr>
+<th>Primary School Enrollment</th>
+<td>60</td>
+<td>3.108808</td>
+</tr>
+<tr>
+<th>Clean Fuel Access</th>
+<td>40</td>
+<td>2.072539</td>
+</tr>
+<tr>
+<th>GDP per Capita (2010 US$)</th>
+<td>20</td>
+<td>1.036269</td>
+</tr>
+<tr>
+<th>GDP (Current US$)</th>
+<td>10</td>
+<td>0.518135</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
