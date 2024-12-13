@@ -7516,7 +7516,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Project-Title">Project Title<a class="anchor-link" href="#Project-Title">¶</a></h1>
+<h1 id="A-study-on-global-suicide-rates-and-the-various-socio-economic-and-political-factors-that-affect-it">A study on global suicide rates and the various socio-economic and political factors that affect it<a class="anchor-link" href="#A-study-on-global-suicide-rates-and-the-various-socio-economic-and-political-factors-that-affect-it">¶</a></h1>
 </div>
 </div>
 </div>
@@ -7529,10 +7529,8 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Authors:</p>
 <ul>
-<li><p>Betül Yurtman</p>
-</li>
-<li><p>Sagar Kumar</p>
-</li>
+<li>Betül Yurtman</li>
+<li>Sagar Kumar</li>
 </ul>
 <p>Abstract: <em>"Executive Summary. For the final version: Write an executive summary here. Write it when you are mostly finished with the main report. It should summarize the question, with what data and how you answer it, and what the result is."</em></p>
 </div>
@@ -7545,16 +7543,15 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a></h2><p>In this section describe:</p>
-<ul>
-<li><p>What is the research question(s) you want to answer and why?</p>
-</li>
-<li><p>With what data you want to answer the question?</p>
-</li>
-<li><p>Where does the data come from, how was it collected?</p>
-</li>
-</ul>
-<p>This text will be replace by your introduction.</p>
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a></h2><p>Suicide is a complex global problem that affects numerous individuals, families and communities. It is often a leading cause of preventable deaths globally and is usually influenced by a mix of personal, socio-economic, and govermental factors. In order to garner efficient and effective public health policies, it is important to understand the driving factors for high and low suicide rates.</p>
+<p>This report will delve into global suicide rates and how they differ across various countries, years and genders. We will explore the complex relationship between suicide rates and socio-economic factors like GDP per capita, literaly rate, unemployment rate, political stability, freedom of press and more.  This report will be guided by three leading questions:</p>
+<pre><code>1. How do suicide rates differ across countries and over time, and what factors contribute to gender disparities?
+2. What roles do literacy rates and unemployment play in influencing suicide rates globally?
+3. How do socio-economic and governance factors correlate with suicide rates?
+
+</code></pre>
+<p>The raw data was collected from the world bank data bank. The datasets used were Gender Statistics and Environment Social and Governance (ESG). The Gender Statistics dataset includes variables like Population, GDP per capita, Human Capital Index (HCI), suicide and literacy rate and more. The ESG dataset includes further values like the Economic and Social Right performance score, unemployment rate, political stability, free press and more. We combined the data based on the country and year and applied some pre-processing in order to be able to handle and analyze the data better.</p>
+<p>----A line or two here about predictions---</p>
 </div>
 </div>
 </div>
@@ -7563,7 +7560,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Necessary libraries</span>
@@ -7586,9 +7583,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Data">Data<a class="anchor-link" href="#Data">¶</a></h2><p>Put the dataset you want to use into this repository and import it in a chunk here. Describe the relevant aspects of the data here. Also some basic data preparation can already happen here.</p>
-<p>Important: If the dataset is very huge than committing and pushing it may be a problem. In this case do not provide the data but provide a download script or download instructions and loading instructions.</p>
-<p>This text will be replace by your text about data import.</p>
+<h2 id="Data">Data<a class="anchor-link" href="#Data">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7597,10 +7592,10 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Import your data here. </span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Import Data</span>
 <span class="c1"># gs = Gender Statistics</span>
 <span class="n">data_gs_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">"P_Data_Extract_From_Gender_Statistics.xlsx"</span><span class="p">)</span>
 <span class="c1"># esg = Environment Social and Governance</span>
@@ -7615,7 +7610,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># We wil use the copy of the dataset to be able to read the dataset from the file just once.</span>
@@ -7632,7 +7627,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">data_gs</span>
@@ -7646,7 +7641,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7943,7 +7938,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">data_esg</span>
@@ -7957,7 +7952,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8170,10 +8165,10 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Remove the last two rows from both datasets, there is some empty rows and explanations about datasets.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Remove the last 5 rows from both datasets, there are some empty rows and explanations about datasets at the end.</span>
 <span class="n">data_gs</span> <span class="o">=</span> <span class="n">data_gs</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># Exclude the last 5 rows</span>
 <span class="n">data_esg</span> <span class="o">=</span> <span class="n">data_esg</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># Exclude the last 5 rows</span>
 </pre></div>
@@ -8186,7 +8181,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Merging the two datasets.</span>
@@ -8210,7 +8205,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span>
@@ -8224,7 +8219,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8593,7 +8588,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Column names and new names</span>
@@ -8636,7 +8631,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8836,7 +8831,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># This part is for reproducibility. If someone downloads the data in a different column order, this way they will have the same column order with the report.</span>
@@ -8882,7 +8877,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -9082,7 +9077,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Dataset Overview to analyse the data types, shape of the dataset and unique value count for each variable. </span>
@@ -9129,7 +9124,7 @@ a.anchor-link {
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -9291,7 +9286,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">columns_to_convert</span> <span class="o">=</span> <span class="p">[</span>
@@ -9316,7 +9311,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Missing value analysis</span>
@@ -9353,7 +9348,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -9485,7 +9480,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Filling missing values with the average value for each country, if they have any non-missing value for the variable.</span>
@@ -9533,7 +9528,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -9733,7 +9728,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Let's see the variables that still has missing data.</span>
@@ -9751,7 +9746,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -9875,36 +9870,142 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Analysis">Analysis<a class="anchor-link" href="#Analysis">¶</a></h2><p>In this section:</p>
-<p>Text describing the steps of analysis and some well crafted code chunks with visualization(s) and statistical analyses that assesses the research questions.</p>
-<p>This text will be replaced by your analysis.</p>
+<p><strong>Including the continents using "Country Name" column.</strong></p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Make a least one visualization here. Make more if needed (usually the case).</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Continent mapping</span>
+<span class="n">continent_mapping</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"Africa"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"Algeria"</span><span class="p">,</span> <span class="s2">"Angola"</span><span class="p">,</span> <span class="s2">"Benin"</span><span class="p">,</span> <span class="s2">"Botswana"</span><span class="p">,</span> <span class="s2">"Burkina Faso"</span><span class="p">,</span> <span class="s2">"Burundi"</span><span class="p">,</span> <span class="s2">"Cabo Verde"</span><span class="p">,</span>
+        <span class="s2">"Cameroon"</span><span class="p">,</span> <span class="s2">"Central African Republic"</span><span class="p">,</span> <span class="s2">"Chad"</span><span class="p">,</span> <span class="s2">"Comoros"</span><span class="p">,</span> <span class="s2">"Congo, Dem. Rep."</span><span class="p">,</span>
+        <span class="s2">"Congo, Rep."</span><span class="p">,</span> <span class="s2">"Djibouti"</span><span class="p">,</span> <span class="s2">"Egypt, Arab Rep."</span><span class="p">,</span> <span class="s2">"Equatorial Guinea"</span><span class="p">,</span> <span class="s2">"Eritrea"</span><span class="p">,</span>
+        <span class="s2">"Eswatini"</span><span class="p">,</span> <span class="s2">"Ethiopia"</span><span class="p">,</span> <span class="s2">"Gabon"</span><span class="p">,</span> <span class="s2">"Gambia, The"</span><span class="p">,</span> <span class="s2">"Ghana"</span><span class="p">,</span> <span class="s2">"Guinea"</span><span class="p">,</span> <span class="s2">"Guinea-Bissau"</span><span class="p">,</span>
+        <span class="s2">"Kenya"</span><span class="p">,</span> <span class="s2">"Lesotho"</span><span class="p">,</span> <span class="s2">"Liberia"</span><span class="p">,</span> <span class="s2">"Libya"</span><span class="p">,</span> <span class="s2">"Madagascar"</span><span class="p">,</span> <span class="s2">"Malawi"</span><span class="p">,</span> <span class="s2">"Mali"</span><span class="p">,</span>
+        <span class="s2">"Mauritania"</span><span class="p">,</span> <span class="s2">"Mauritius"</span><span class="p">,</span> <span class="s2">"Morocco"</span><span class="p">,</span> <span class="s2">"Mozambique"</span><span class="p">,</span> <span class="s2">"Namibia"</span><span class="p">,</span> <span class="s2">"Niger"</span><span class="p">,</span>
+        <span class="s2">"Nigeria"</span><span class="p">,</span> <span class="s2">"Rwanda"</span><span class="p">,</span> <span class="s2">"Senegal"</span><span class="p">,</span> <span class="s2">"Seychelles"</span><span class="p">,</span> <span class="s2">"Sierra Leone"</span><span class="p">,</span> <span class="s2">"Somalia"</span><span class="p">,</span> <span class="s2">"South Africa"</span><span class="p">,</span>
+        <span class="s2">"South Sudan"</span><span class="p">,</span> <span class="s2">"Sudan"</span><span class="p">,</span> <span class="s2">"Tanzania"</span><span class="p">,</span> <span class="s2">"Togo"</span><span class="p">,</span> <span class="s2">"Tunisia"</span><span class="p">,</span> <span class="s2">"Uganda"</span><span class="p">,</span> <span class="s2">"Zambia"</span><span class="p">,</span> <span class="s2">"Zimbabwe"</span><span class="p">,</span>
+        <span class="s2">"Cote d'Ivoire"</span><span class="p">,</span> <span class="s2">"Sao Tome and Principe"</span>
+    <span class="p">],</span>
+    <span class="s2">"Asia"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"Afghanistan"</span><span class="p">,</span> <span class="s2">"Armenia"</span><span class="p">,</span> <span class="s2">"Azerbaijan"</span><span class="p">,</span> <span class="s2">"Bahrain"</span><span class="p">,</span> <span class="s2">"Bangladesh"</span><span class="p">,</span> <span class="s2">"Bhutan"</span><span class="p">,</span> <span class="s2">"Brunei Darussalam"</span><span class="p">,</span>
+        <span class="s2">"Cambodia"</span><span class="p">,</span> <span class="s2">"China"</span><span class="p">,</span> <span class="s2">"Cyprus"</span><span class="p">,</span> <span class="s2">"Georgia"</span><span class="p">,</span> <span class="s2">"India"</span><span class="p">,</span> <span class="s2">"Indonesia"</span><span class="p">,</span> <span class="s2">"Iran, Islamic Rep."</span><span class="p">,</span>
+        <span class="s2">"Iraq"</span><span class="p">,</span> <span class="s2">"Israel"</span><span class="p">,</span> <span class="s2">"Japan"</span><span class="p">,</span> <span class="s2">"Jordan"</span><span class="p">,</span> <span class="s2">"Kazakhstan"</span><span class="p">,</span> <span class="s2">"Kuwait"</span><span class="p">,</span> <span class="s2">"Kyrgyz Republic"</span><span class="p">,</span> <span class="s2">"Lao PDR"</span><span class="p">,</span>
+        <span class="s2">"Lebanon"</span><span class="p">,</span> <span class="s2">"Malaysia"</span><span class="p">,</span> <span class="s2">"Maldives"</span><span class="p">,</span> <span class="s2">"Mongolia"</span><span class="p">,</span> <span class="s2">"Myanmar"</span><span class="p">,</span> <span class="s2">"Nepal"</span><span class="p">,</span> <span class="s2">"Oman"</span><span class="p">,</span> <span class="s2">"Pakistan"</span><span class="p">,</span>
+        <span class="s2">"Philippines"</span><span class="p">,</span> <span class="s2">"Qatar"</span><span class="p">,</span> <span class="s2">"Saudi Arabia"</span><span class="p">,</span> <span class="s2">"Singapore"</span><span class="p">,</span> <span class="s2">"Sri Lanka"</span><span class="p">,</span> <span class="s2">"Syrian Arab Republic"</span><span class="p">,</span>
+        <span class="s2">"Tajikistan"</span><span class="p">,</span> <span class="s2">"Thailand"</span><span class="p">,</span> <span class="s2">"Turkmenistan"</span><span class="p">,</span> <span class="s2">"United Arab Emirates"</span><span class="p">,</span> <span class="s2">"Uzbekistan"</span><span class="p">,</span> <span class="s2">"Viet Nam"</span><span class="p">,</span>
+        <span class="s2">"West Bank and Gaza"</span><span class="p">,</span> <span class="s2">"Yemen, Rep."</span><span class="p">,</span> <span class="s2">"Korea, Rep."</span><span class="p">,</span> <span class="s2">"Hong Kong SAR, China"</span><span class="p">,</span> <span class="s2">"Macao SAR, China"</span><span class="p">,</span>
+        <span class="s2">"Timor-Leste"</span>
+    <span class="p">],</span>
+    <span class="s2">"Europe"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"Albania"</span><span class="p">,</span> <span class="s2">"Andorra"</span><span class="p">,</span> <span class="s2">"Austria"</span><span class="p">,</span> <span class="s2">"Belarus"</span><span class="p">,</span> <span class="s2">"Belgium"</span><span class="p">,</span> <span class="s2">"Bosnia and Herzegovina"</span><span class="p">,</span> <span class="s2">"Bulgaria"</span><span class="p">,</span>
+        <span class="s2">"Croatia"</span><span class="p">,</span> <span class="s2">"Czechia"</span><span class="p">,</span> <span class="s2">"Denmark"</span><span class="p">,</span> <span class="s2">"Estonia"</span><span class="p">,</span> <span class="s2">"Faroe Islands"</span><span class="p">,</span> <span class="s2">"Finland"</span><span class="p">,</span> <span class="s2">"France"</span><span class="p">,</span> <span class="s2">"Germany"</span><span class="p">,</span>
+        <span class="s2">"Gibraltar"</span><span class="p">,</span> <span class="s2">"Greece"</span><span class="p">,</span> <span class="s2">"Hungary"</span><span class="p">,</span> <span class="s2">"Iceland"</span><span class="p">,</span> <span class="s2">"Ireland"</span><span class="p">,</span> <span class="s2">"Italy"</span><span class="p">,</span> <span class="s2">"Kosovo"</span><span class="p">,</span> <span class="s2">"Latvia"</span><span class="p">,</span>
+        <span class="s2">"Liechtenstein"</span><span class="p">,</span> <span class="s2">"Lithuania"</span><span class="p">,</span> <span class="s2">"Luxembourg"</span><span class="p">,</span> <span class="s2">"Malta"</span><span class="p">,</span> <span class="s2">"Moldova"</span><span class="p">,</span> <span class="s2">"Monaco"</span><span class="p">,</span> <span class="s2">"Montenegro"</span><span class="p">,</span>
+        <span class="s2">"Netherlands"</span><span class="p">,</span> <span class="s2">"North Macedonia"</span><span class="p">,</span> <span class="s2">"Norway"</span><span class="p">,</span> <span class="s2">"Poland"</span><span class="p">,</span> <span class="s2">"Portugal"</span><span class="p">,</span> <span class="s2">"Romania"</span><span class="p">,</span> <span class="s2">"Russian Federation"</span><span class="p">,</span>
+        <span class="s2">"San Marino"</span><span class="p">,</span> <span class="s2">"Serbia"</span><span class="p">,</span> <span class="s2">"Slovak Republic"</span><span class="p">,</span> <span class="s2">"Slovenia"</span><span class="p">,</span> <span class="s2">"Spain"</span><span class="p">,</span> <span class="s2">"Sweden"</span><span class="p">,</span> <span class="s2">"Switzerland"</span><span class="p">,</span>
+        <span class="s2">"Turkiye"</span><span class="p">,</span> <span class="s2">"Ukraine"</span><span class="p">,</span> <span class="s2">"United Kingdom"</span><span class="p">,</span> <span class="s2">"Isle of Man"</span>
+    <span class="p">],</span>
+    <span class="s2">"North America"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"Antigua and Barbuda"</span><span class="p">,</span> <span class="s2">"Bahamas, The"</span><span class="p">,</span> <span class="s2">"Barbados"</span><span class="p">,</span> <span class="s2">"Belize"</span><span class="p">,</span> <span class="s2">"Bermuda"</span><span class="p">,</span> <span class="s2">"Canada"</span><span class="p">,</span> <span class="s2">"Costa Rica"</span><span class="p">,</span>
+        <span class="s2">"Cuba"</span><span class="p">,</span> <span class="s2">"Dominica"</span><span class="p">,</span> <span class="s2">"Dominican Republic"</span><span class="p">,</span> <span class="s2">"El Salvador"</span><span class="p">,</span> <span class="s2">"Grenada"</span><span class="p">,</span> <span class="s2">"Guatemala"</span><span class="p">,</span> <span class="s2">"Haiti"</span><span class="p">,</span>
+        <span class="s2">"Honduras"</span><span class="p">,</span> <span class="s2">"Jamaica"</span><span class="p">,</span> <span class="s2">"Mexico"</span><span class="p">,</span> <span class="s2">"Nicaragua"</span><span class="p">,</span> <span class="s2">"Panama"</span><span class="p">,</span> <span class="s2">"Puerto Rico"</span><span class="p">,</span> <span class="s2">"St. Kitts and Nevis"</span><span class="p">,</span>
+        <span class="s2">"St. Lucia"</span><span class="p">,</span> <span class="s2">"St. Vincent and the Grenadines"</span><span class="p">,</span> <span class="s2">"Trinidad and Tobago"</span><span class="p">,</span> <span class="s2">"United States"</span><span class="p">,</span>
+        <span class="s2">"Virgin Islands (U.S.)"</span><span class="p">,</span> <span class="s2">"Cayman Islands"</span><span class="p">,</span> <span class="s2">"British Virgin Islands"</span><span class="p">,</span> <span class="s2">"St. Martin (French part)"</span><span class="p">,</span>
+        <span class="s2">"Greenland"</span><span class="p">,</span> <span class="s2">"Sint Maarten (Dutch part)"</span><span class="p">,</span> <span class="s2">"Turks and Caicos Islands"</span>
+    <span class="p">],</span>
+    <span class="s2">"South America"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"Argentina"</span><span class="p">,</span> <span class="s2">"Bolivia"</span><span class="p">,</span> <span class="s2">"Brazil"</span><span class="p">,</span> <span class="s2">"Chile"</span><span class="p">,</span> <span class="s2">"Colombia"</span><span class="p">,</span> <span class="s2">"Ecuador"</span><span class="p">,</span> <span class="s2">"Guyana"</span><span class="p">,</span> <span class="s2">"Paraguay"</span><span class="p">,</span>
+        <span class="s2">"Peru"</span><span class="p">,</span> <span class="s2">"Suriname"</span><span class="p">,</span> <span class="s2">"Uruguay"</span><span class="p">,</span> <span class="s2">"Venezuela, RB"</span><span class="p">,</span> <span class="s2">"Curacao"</span><span class="p">,</span> <span class="s2">"Aruba"</span>
+    <span class="p">],</span>
+    <span class="s2">"Oceania"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"Australia"</span><span class="p">,</span> <span class="s2">"Fiji"</span><span class="p">,</span> <span class="s2">"Kiribati"</span><span class="p">,</span> <span class="s2">"Marshall Islands"</span><span class="p">,</span> <span class="s2">"Micronesia, Fed. Sts."</span><span class="p">,</span> <span class="s2">"Nauru"</span><span class="p">,</span>
+        <span class="s2">"New Zealand"</span><span class="p">,</span> <span class="s2">"Palau"</span><span class="p">,</span> <span class="s2">"Papua New Guinea"</span><span class="p">,</span> <span class="s2">"Samoa"</span><span class="p">,</span> <span class="s2">"Solomon Islands"</span><span class="p">,</span> <span class="s2">"Tonga"</span><span class="p">,</span> <span class="s2">"Tuvalu"</span><span class="p">,</span>
+        <span class="s2">"Vanuatu"</span><span class="p">,</span> <span class="s2">"American Samoa"</span><span class="p">,</span> <span class="s2">"New Caledonia"</span><span class="p">,</span> <span class="s2">"French Polynesia"</span><span class="p">,</span> <span class="s2">"Guam"</span><span class="p">,</span> <span class="s2">"Northern Mariana Islands"</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Flatten the continent mapping for easier access</span>
+<span class="n">country_to_continent</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">country</span><span class="p">:</span> <span class="n">continent</span>
+    <span class="k">for</span> <span class="n">continent</span><span class="p">,</span> <span class="n">countries</span> <span class="ow">in</span> <span class="n">continent_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span>
+<span class="p">}</span>
+
+<span class="c1"># Map countries to continents</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">'Continent'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">'Country Name'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">country_to_continent</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[[</span><span class="s1">'Country Name'</span><span class="p">,</span> <span class="s1">'Continent'</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Make a statistical analysis (e.g. a model) here. </span>
-</pre></div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Country Name</th>
+<th>Continent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Afghanistan</td>
+<td>Asia</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Albania</td>
+<td>Europe</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Algeria</td>
+<td>Africa</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Andorra</td>
+<td>Europe</td>
+</tr>
+<tr>
+<th>4</th>
+<td>Angola</td>
+<td>Africa</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -9916,7 +10017,29 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<!-- There can be more chunks of your choice-->
+<h2 id="Analysis-and-Predictions">Analysis and Predictions<a class="anchor-link" href="#Analysis-and-Predictions">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Sagar's-Code">Sagar's Code<a class="anchor-link" href="#Sagar's-Code">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Bet%C3%BCl's-Code">Betül's Code<a class="anchor-link" href="#Bet%C3%BCl's-Code">¶</a></h2>
 </div>
 </div>
 </div>
@@ -9931,17 +10054,6 @@ a.anchor-link {
 Derive answers to the question from your analysis</p>
 <p>Identify limitations of your analysis</p>
 <p>How reliable are your answers?</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>This text will be replaced by your conclusions.</p>
 </div>
 </div>
 </div>
